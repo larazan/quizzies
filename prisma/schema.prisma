@@ -1,0 +1,130 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  @db.Text
+  access_token       String?  @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  @db.Text
+  session_state      String?
+  user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id            String    @id @default(cuid())
+  sessionToken  String    @unique
+  userId        String
+  expires       DateTime
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  role          String    @default("user")
+  name          String?
+  username      String?   @unique
+  email         String?   @unique
+  password      String?
+  emailVerified DateTime?
+  image         String?
+  categoryStats CategoryStat[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt  
+  accounts      Account[]
+  sessions      Session[]
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Category {
+  id            String      @id @default(cuid())
+  name          String    @db.VarChar(255)
+  description   String    @db.Text
+  image         String
+  quizzes       Quiz[]
+  categoryStats CategoryStat[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt  
+}
+
+model Quiz {
+  id            String      @id @default(cuid())
+  title         String    @db.VarChar(255)
+  description   String?   @db.Text
+  image         String?
+  categoryId    String       
+  category      Category  @relation(fields: [categoryId], references: [id])
+  questions     Question[]     
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt     
+}
+
+model Question {
+  id            String      @id @default(cuid())
+  text          String    @db.Text
+  quizId        String    
+  quiz          Quiz      @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  difficulty    String?
+  options       Option[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt            
+}
+
+model Option {
+  id            String      @id @default(cuid())
+  text          String    @db.Text
+  isCorrect     Boolean
+  questionId    String    
+  question      Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+}
+
+model CategoryStat {
+  id            String      @id @default(cuid())
+  userId        String    
+  user          User      @relation(fields: [userId], references: [id])
+  categoryId    String    
+  category      Category  @relation(fields: [categoryId], references: [id])
+  attempts      Int       @default(0)
+  completed     Int       @default(0)
+  averageScore  Float?    
+  lastAttempt   DateTime?
+  
+  // totalQuizzes  Int       @default(0)
+  // totalCorrect  Int       @default(0)
+  // totalWrong    Int       @default(0)
+
+  @@unique([userId, categoryId])
+}
+
+// migrate
+// npx prisma migrate dev
+// initialization
+
+// 
