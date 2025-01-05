@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import ContextProvider from "../../providers/contextProvider";
+// import ContextProvider from "../../providers/contextProvider";
+import ContextProvider from "../../providers/ContextProvider";
 
 const nunito = Nunito({ 
   subsets: ["latin"],

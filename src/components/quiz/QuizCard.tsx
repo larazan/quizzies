@@ -10,15 +10,6 @@ interface Props {
     quiz: IQuiz;
 }
 
-const obj = {
-    text: "Which organ in the human body produces insulin?",
-    options: [
-        { text: "Pancreas", isCorrect: true },
-        { text: "Liver", isCorrect: false },
-        { text: "Kidney", isCorrect: false },
-        { text: "Stomach", isCorrect: false },
-    ]
-}
 
 function QuizCard({ quiz }: Props) {
     const router = useRouter();
