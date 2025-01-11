@@ -1,19 +1,24 @@
 "use client"
 
 import React from 'react'
+import { useGlobalContext } from "../../../context/globalContext";
 import { IQuiz } from '../../../types/types'
 import Image from 'next/image';
 import { dots } from '@/utils/icons';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
+import { useRouter } from "next/navigation";
 
 interface Props {
     quiz: IQuiz;
 }
 
-
 function QuizCard({ quiz }: Props) {
     const router = useRouter();
+
+    const { setSelectedQuiz } = useGlobalContext();
+
     const handleClick = () => {
+        setSelectedQuiz(quiz);
         router.push(`/quiz/setup/${quiz.id}`);
     }
     

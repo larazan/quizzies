@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-// import ContextProvider from "../../providers/contextProvider";
 import ContextProvider from "../../providers/ContextProvider";
+import { Toaster } from "react-hot-toast";
 
 const nunito = Nunito({ 
   subsets: ["latin"],
@@ -28,6 +28,7 @@ export default function RootLayout({
       </head>
       <ContextProvider>
       <body className={nunito.className}>
+        <Toaster position="top-center" />
         <Header />
         <main className="py-8 mx-[15rem] xl:mx-[25rem] h-full">
           {children}
