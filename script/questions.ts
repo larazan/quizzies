@@ -1,4 +1,4 @@
-const questions = require("../data/biologyQuestions.js")
+const questions = require("../data/csQuestions.js")
 
 let questionsPrisma:any
 
@@ -13,7 +13,7 @@ async function seedQuestions() {
         const createdQuestion = await questionsPrisma.question.create({
             data: {
                 text: question.text,
-                quizId: "",
+                quizId: "cm5qk7pqn0001u0xotquhk2a1",
                 options: {
                     create: question.options,
                 },
@@ -31,3 +31,7 @@ seedQuestions().catch((e) => {
 }).finally(async () => {
     await questionsPrisma.$disconnect();
 });
+
+
+// npx ts-node script/questions.ts
+

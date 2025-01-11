@@ -67,10 +67,10 @@ model VerificationToken {
 }
 
 model Category {
-  id            String      @id @default(cuid())
+  id            String    @id @default(cuid())
   name          String    @db.VarChar(255)
   description   String    @db.Text
-  image         String
+  image         String?
   quizzes       Quiz[]
   categoryStats CategoryStat[]
   createdAt     DateTime  @default(now())

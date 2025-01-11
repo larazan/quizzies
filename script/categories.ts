@@ -38,3 +38,5 @@ addCategories()
 .finally(async () => {
     await categsPrisma.$disconnect();
 })
+
+// npx ts-node script/categories.ts

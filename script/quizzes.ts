@@ -6,32 +6,32 @@ const quizzes = [
     {
         title: "Computer Science Basics",
         description: "A quiz about fndamental computer science concepts.",
-        categoryId: "1",
+        categoryId: "cm5l09cps0001u0ngffk10suz",
     },
     {
         title: "Programming Fundamentals",
         description: "Test your knowledge of basic programming concept.",
-        categoryId: "1",
+        categoryId: "cm5l09cw30002u0ngxkfthiq3",
     },
     {
         title: "Data Structures",
         description: "Assess your understanding of data structures.",
-        categoryId: "1",
+        categoryId: "cm5l09cw30002u0ngxkfthiq3",
     },
     {
         title: "Physics",
         description: "Test your knowledge of physics.",
-        categoryId: "1",
+        categoryId: "cm5l09bmb0000u0ngs50s9wqy",
     },
     {
         title: "Biology",
         description: "Test your knowledge of biology.",
-        categoryId: "1",
+        categoryId: "cm5l09bmb0000u0ngs50s9wqy",
     },
     {
         title: "Chemistry",
         description: "Test your knowledge of chemistry.",
-        categoryId: "1",
+        categoryId: "cm5l09bmb0000u0ngs50s9wqy",
     },
 ]
 
@@ -57,3 +57,7 @@ seedQuizzes().catch((e) => {
 });
 
 // npx ts-node script/quizzes.ts
+
+// cm5l09bmb0000u0ngs50s9wqy    science
+// cm5l09cps0001u0ngffk10suz    tech
+// cm5l09cw30002u0ngxkfthiq3    prog
