@@ -1,7 +1,7 @@
 import React from 'react'
 import { auth } from '../../../auth'
 
-const Dashboard = async () => {
+async function page() {
     const session = await auth();
 
   return (
@@ -10,8 +10,9 @@ const Dashboard = async () => {
         <h2 className='text-xl'>
             Welcome back: <span className='font-bold'>{session?.user?.name}</span>
         </h2>
+        <p>{JSON.stringify(session)}</p>
     </div>
   )
 }
 
-export default Dashboard
+export default page

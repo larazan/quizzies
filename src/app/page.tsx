@@ -8,9 +8,9 @@ export default function Home() {
   const { categories } = useGlobalContext();
 
   return (
-    <div>
+    <div className="flex flex-col w-full py-8 px-6 gap-5">
       <h1 className="text-4xl font-bold">Quiz catalog</h1>
-      <div className="mt-6 grid grid-cols-[auto-fit, minmax(300px,1fr)] gap-6">
+      <div className="mt-6 grid grid-cols-2 gap-6">
         {categories.map((category:ICategory) => (
           <HomeCard key={category.id} category={category} />
         ))}

@@ -132,7 +132,7 @@ function page() {
   };
 
   return (
-    <div className="py-[2.5rem]">
+    <div className="flex w-full mx-auto max-w-3xl px-6 py-[2.5rem]">
       {shuffledQuestions[currentIndex] ? (
         <div className="space-y-6">
           <div className="flex flex-col gap-6">

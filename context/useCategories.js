@@ -21,10 +21,9 @@ const useCategories = () => {
 
     useEffect(() => {
         getCategories();
-
-        return { loading, categories };
     }, [])
     
+    return { loading, categories };
 };
 
 export default useCategories;

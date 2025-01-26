@@ -30,7 +30,7 @@ export default function RootLayout({
       <body className={nunito.className}>
         <Toaster position="top-center" />
         <Header />
-        <main className="py-8 mx-[15rem] xl:mx-[25rem] h-full">
+        <main className="py-0  w-full mx-auto h-full">
           {children}
         </main>
       </body>
