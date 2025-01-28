@@ -58,7 +58,13 @@ const config: Config = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+			lamaSky: "#C3EBFA",
+			lamaSkyLight: "#EDF9FD",
+			lamaPurple: "#CFCEFF",
+			lamaPurpleLight: "#F1F0FF",
+			lamaYellow: "#FAE27C",
+			lamaYellowLight: "#FEFCE8",
   		}
   	}
   },

@@ -28,11 +28,11 @@ export default function RootLayout({
       </head>
       <ContextProvider>
       <body className={nunito.className}>
-        <Toaster position="top-center" />
+        {/* <Toaster position="top-center" />
         <Header />
-        <main className="py-0  w-full mx-auto h-full">
+        <main className="py-0  w-full mx-auto h-full"> */}
           {children}
-        </main>
+        {/* </main> */}
       </body>
       </ContextProvider>
     </html>

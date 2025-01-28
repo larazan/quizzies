@@ -9,7 +9,7 @@ import { RegisterButton } from '../button'
 const FormRegister = () => {
     const [state, formAction] = useFormState(signUpCredentials, null);
   return (
-    <form action={formAction} className='space-y-6'>
+    <form action={formAction} className='pt-4 space-y-4'>
         {state?.message ? (
             <div className='p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-100' role='alert'>
                 <span>{state?.message}</span>

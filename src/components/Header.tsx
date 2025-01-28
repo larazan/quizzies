@@ -28,7 +28,7 @@ async function Header() {
     <header className="min-h-[6vh] border-b-2 flex items-center w-full bg-white">
         <nav className="w-full max-w-4xl mx-auto p-4 flex items-center justify-between bg-white">
             <Link href={"/"} className="flex items-center gap-2">
-                <Image src={""} alt='logo' width={50} height={50} />
+                <Image src={"/icon--logo-lg.png"} alt='logo' width={50} height={50} />
                 <h1 className='text-3xl font-bold text-blue-400'>Qizz</h1>
             </Link>
             

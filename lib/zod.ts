@@ -20,3 +20,16 @@ export const RegisterSchema = object({
     message: "Password does not match",
     path: ["ConfirmPassword"]
 });
+
+export const ForgotSchema = object({
+    email: string().email("Invalid Email"),
+});
+
+export const ResetSchema = object({
+    password: string()
+        .min(8, "Password must be more than 8 characters") 
+        .max(32, "Password must be less than 32 characters"),
+    ConfirmPassword: string()
+        .min(8, "Password must be more than 8 characters") 
+        .max(32, "Password must be less than 32 characters"),
+});

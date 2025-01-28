@@ -9,7 +9,7 @@ import { LoginButton } from '../button'
 const FormLogin = () => {
     const [state, formAction] = useFormState(signInCredentials, null);
   return (
-    <form action={formAction} className='space-y-6'>
+    <form action={formAction} className='pt-4 space-y-4'>
         {state?.message ? (
             <div className='p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-100' role='alert'>
                 <span>{state?.message}</span>
@@ -30,13 +30,17 @@ const FormLogin = () => {
                <span className='text-sm text-red-500 mt-2'>{state?.error?.password}</span> 
             </div>
         </div>
-        
+        <div className='flex w-full justify-end'>
+            <Link href={"/forgot"}><span className='text-sm font-medium text-gray-500 hover:text-gray-800'>Forgot password?</span></Link>
+        </div>
         <LoginButton />
+        
         <div>
             <p className='text-sm font-light text-gray-500'>Dont have an account yet?
                 <Link href={"/register"}><span className='font-medium pl-1 text-blue-600 hover:text-blue-700'>Sign up here</span></Link>
             </p>
         </div>
+        
     </form>
   )
 }
