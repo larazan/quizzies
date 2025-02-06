@@ -1,6 +1,47 @@
 // TEMPORARY DATA
+import { prisma } from "../../lib/prisma";
 
 export let role = "admin";
+
+const ITEMS_PER_PAGE = 5;
+
+export const getCategories= async (query: string, currentPage: number) => {
+  const offset = (currentPage- 1) * ITEMS_PER_PAGE;
+  try {
+    const categories = await prisma.category.findMany({
+      skip: offset,
+      take: ITEMS_PER_PAGE,
+      where: {
+        OR: [
+          {
+            name: {
+              contains: query,
+            }
+          },
+        ]
+      }
+    });
+    return categories;
+  } catch (error) {
+    throw new Error("Failed to fetch category data");
+  }
+}
+
+export const getCategoryPages= async (query: string) => {
+  try {
+    const categories = await prisma.category.count({
+      where: {
+        name: {
+          contains: query,
+        }
+      }
+    });
+    const totalPages = Math.ceil(Number(categories) / ITEMS_PER_PAGE);
+    return totalPages;
+  } catch (error) {
+    throw new Error("Failed to fetch category data");
+  }
+}
 
 export const teachersData = [
   {
