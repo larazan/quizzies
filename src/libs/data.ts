@@ -3,7 +3,7 @@ import { prisma } from "../../lib/prisma";
 
 export let role = "admin";
 
-const ITEMS_PER_PAGE = 5;
+const ITEMS_PER_PAGE = 10;
 
 export const getCategories= async (query: string, currentPage: number) => {
   const offset = (currentPage- 1) * ITEMS_PER_PAGE;

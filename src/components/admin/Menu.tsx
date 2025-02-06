@@ -1,6 +1,7 @@
 import { role } from "@/libs/data";
 import Image from "next/image";
 import Link from "next/link";
+import Signout from "./Signout";
 
 const menuItems = [
   {
@@ -141,6 +142,7 @@ const Menu = () => {
           })}
         </div>
       ))}
+      <Signout />
     </div>
   );
 };
