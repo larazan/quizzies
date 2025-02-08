@@ -2,6 +2,8 @@ import React from 'react'
 import { getCategories } from '@/libs/data'
 import { formatDate } from '@/libs/utils';
 import FormModal from './admin/FormModal';
+import DeleteModal from './DeleteModal';
+import UpdateModal from './UpdateModal';
 
 
 const CategoryTable = async ({
@@ -37,8 +39,8 @@ const CategoryTable = async ({
                 <td>
                     <div className="flex items-center gap-2">
                     
-                        <FormModal table="parent" type="update" data={item} />
-                        <FormModal table="parent" type="delete" id={item.id} />
+                        <UpdateModal category={item} />
+                        <DeleteModal id={item.id} />
                     
                     </div>
                 </td>

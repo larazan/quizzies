@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Menu from '@/components/admin/Menu';
 import Navbar from '@/components/admin/Navbar';
+import Signout from '@/components/admin/Signout';
 
 export default function AdminLayout({
     children,
@@ -21,6 +22,7 @@ export default function AdminLayout({
             <span className="hidden lg:block font-bold">SchooLama</span>
           </Link>
           <Menu />
+          <Signout />
         </div>
         {/* RIGHT */}
         <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#F7F8FA] overflow-scroll flex flex-col">

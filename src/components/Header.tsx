@@ -84,7 +84,7 @@ async function Header() {
                         <span className='font-xs text-gray-400 text-right capitalize'>{session.user.role}</span>
                     </div>
                     <button type='button' className='text-sm ring-2 bg-gray-100 rounded-full'>
-                        <Image src={session?.user.image || "/avatar.svg"} alt='avatar' width={64} height={64} className='w-8 h-8 rounded-full' />
+                        <Image src={session?.user.image || "/avatar.png"} alt='avatar' width={64} height={64} className='w-8 h-8 rounded-full' />
                     </button>
                 </div>
             )}

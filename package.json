@@ -11,6 +11,7 @@
   "dependencies": {
     "@arcjet/next": "^1.0.0-alpha.34",
     "@auth/prisma-adapter": "^2.7.4",
+    "@hookform/resolvers": "^3.10.0",
     "@prisma/client": "^6.1.0",
     "@radix-ui/react-label": "^2.1.1",
     "@radix-ui/react-select": "^2.1.4",
@@ -33,6 +34,7 @@
     "react-hot-toast": "^2.5.1",
     "react-icons": "^5.4.0",
     "recharts": "^2.15.0",
+    "swr": "^2.3.2",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "unique-forge": "^1.6.0",

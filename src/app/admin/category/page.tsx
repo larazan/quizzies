@@ -7,6 +7,7 @@ import { getCategoryPages } from '@/libs/data';
 import Pagination from '@/components/pagination';
 import { Suspense } from 'react';
 import { TableSkeleton } from '@/components/skeleton';
+import AddModal from '@/components/AddModal';
 
 const columns = [
     {
@@ -63,7 +64,8 @@ const CategoryPage = async ({
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
-              <FormModal table="student" type="create"/>
+              {/* <FormModal table="student" type="create"/> */}
+              <AddModal />
           </div>
         </div>
       </div>

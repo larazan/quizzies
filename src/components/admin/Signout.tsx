@@ -13,7 +13,7 @@ const Signout = async () => {
             "use server";
             await signOut({redirectTo:"/login"})
         }}
-            className='flex justify-center items-center'        
+            className='flex justify-center items-center mt-1'        
         >
             <button type='submit' className='flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 md:px-2 rounded-md hover:bg-lamaSkyLight'>
                 <Image src="/logout.png" alt="" width={20} height={20} />
